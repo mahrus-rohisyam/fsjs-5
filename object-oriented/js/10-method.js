@@ -1,0 +1,1 @@
+let array = new Array(['Apple', 'Mangoo', 'Orange'])
