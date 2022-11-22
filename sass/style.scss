@@ -1,0 +1,35 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  // CSS Reset sederhana
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    color: red;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  background-color: brown;
+  display: flex;
+  justify-content: space-between;
+  > li {
+    background-color: red;
+    > a {
+      color: black;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  background-color: brown;
+  display: flex;
+  justify-content: space-between;
+}
+ul > li {
+  background-color: red;
+}
+ul > li > a {
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */
