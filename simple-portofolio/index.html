@@ -5,28 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="/assets/style.css"> -->
+    <link rel="stylesheet" href="/assets/style.css">
     <title>Portofolio - Your Name</title>
   </head>
   <body>
-    <header>
+    <header id="navigation">
       <figure>
-        <img src="../assets/media/russ-logo.svg" alt="russ-logo" srcset="../assets/media/russ-logo.svg" width="50px">
-        <h1 class="screen-reader-text">Your Site</h1>
+        <a href="/">
+          <img id="logo" src="../assets/media/russ-logo.svg" alt="russ-logo" srcset="../assets/media/russ-logo.svg" width="50px">
+          <h1 class="screen-reader-text">Your Site</h1>
+        </a>
       </figure>
       <nav>
         <ul>
-          <li><a href="/page/contact.html">Contact</a></li>
-          <li><a href="/page/gallery.html">Gallery</a></li>
-          <li><a href="/page/blog.html">Blog</a></li>
+          <li class="underline-animation"><a href="/page/contact.html">Contact</a></li>
+          <li class="underline-animation"><a href="/page/gallery.html">Gallery</a></li>
+          <li class="underline-animation"><a href="/page/blog.html">Blog</a></li>
         </ul>
       </nav>
       <button onclick="window.open('mailto:mahrusaim@gmail.com')">
         Let's Talk
       </button>
+      <!-- <div id="mobile-menu" class="slide">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div> -->
     </header>
     <main id="main-content">
-      <section id="welcome">
+      <section id="welcome" class="container">
         <figure>
           <img src="https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg" alt="happy-man" srcset="https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg">
         </figure>
@@ -34,26 +41,26 @@
         <p>Hi, I am Jackson Kamulyan</p>
         <p>I do design, code, teach and also active on community!</p>
       </section>
-      <section id="contact">
+      <section id="contact" class="container">
         <h2>Let's Work Together!</h2>
-        <p>Pick your favorite social media get started.</p>
+        <p>Pick your favorite social media get started.</p><span>Test</span>
         <ul>
           <li id="github">
             <a href="https://github.com/mahrus-rohisyam" title="Github" target="_blank" rel="noopener noreferrer">
-              <span>Github</span>
-              <img src="/assets/media/icons8-github 1.svg" alt="Your Gihub Username">
+              <span class="screen-reader-text">Github</span>
+              <img class="animasi-timbul" src="/assets/media/icons8-github 1.svg" alt="Your Gihub Username">
             </a>
           </li>
           <li id="facebook">
             <a href="https://facebook.com" title="facebook" target="_blank" rel="noopener noreferrer">
-              <span>Facebook</span>
-              <img src="/assets/media/icons8-facebook 1.svg" alt="Your name at Facebook" srcset="/assets/media/icons8-facebook 1.svg">
+              <span class="screen-reader-text">Facebook</span>
+              <img class="animasi-timbul" src="/assets/media/icons8-facebook 1.svg" alt="Your name at Facebook">
             </a>
           </li>
           <li id="instagram">
             <a href="https://instagram.com/mahrus.rohisyam" rel="noopener noreferrer" title="Instagram" target="_blank">
-              <span>instagram</span>
-            <img src="/assets/media/icons8-instagram.svg" alt="Your name at Instagram" srcset="/assets/media/icons8-instagram.svg">
+              <span class="screen-reader-text">instagram</span>
+              <img class="animasi-timbul" src="/assets/media/icons8-instagram.svg" alt="Your name at Instagram">
             </a>
           </li>
         </ul>
