@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid using Flex</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      transition: all 0.75ms;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .container {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+    .container div {
+      width: 150px;
+      height: 50px;
+      background-color: red;
+    }
+
+    /* @media screen and (min-width: 768px) {
+      >= 768px, karena pakai min-width
+      .container div {
+        background-color: blue;
+      }
+    } */
+    @media screen and (max-width: 768px) {
+      /* <= 768, karena pakai max-width */
+      .container div {
+        background-color: blue;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+    <div>Four</div>
+    <div>Five</div>
+  </div>
+</body>
+</html>
