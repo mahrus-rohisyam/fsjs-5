@@ -1,0 +1,19 @@
+SHOW CREATE TABLE `students`;
+
+-- SINGLE
+ALTER TABLE `students`
+	MODIFY COLUMN `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL;
+    
+-- MULTIPLE COLUMN
+ALTER TABLE `students`
+	CHANGE `created_at` `dibuat_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    CHANGE `deleted_at` `dihapus_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL;
+
+-- ADDING 1 Column after table `name`
+ALTER TABLE `students`
+	ADD COLUMN `nyobain` TIMESTAMP DEFAULT CURRENT_TIMESTAMP AFTER `name`;
+    
+ALTER TABLE `teachers`
+	ADD FOREIGN KEY (`subject_id`) REFERENCES `subjects`(`id`);
+
+DESC `teachers`;
