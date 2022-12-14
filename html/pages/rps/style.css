@@ -1,0 +1,51 @@
+:root {
+  box-sizing: border-box;
+}
+
+html, body, * {
+  margin: 10;
+  padding: 0;
+}
+
+#app {
+  height: 100vh;
+}
+
+.summary {
+  background-color: red;
+}
+
+.title {
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.option {
+  width: 30%;
+  padding: 30;
+  font-size: 36;
+  text-align: center;
+  background-color: deeppink;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.option:hover {
+  cursor: pointer;
+  transform: scale(110%);
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) ease-in-out;
+  background-color: brown;
+  -webkit-transform: scale(110%);
+  -moz-transform: scale(110%);
+  -ms-transform: scale(110%);
+  -o-transform: scale(110%);
+  -webkit-transition: cubic-bezier(0.215, 0.610, 0.355, 1) ease-in-out;
+  -moz-transition: cubic-bezier(0.215, 0.610, 0.355, 1) ease-in-out;
+  -ms-transition: cubic-bezier(0.215, 0.610, 0.355, 1) ease-in-out;
+  -o-transition: cubic-bezier(0.215, 0.610, 0.355, 1) ease-in-out;
+}

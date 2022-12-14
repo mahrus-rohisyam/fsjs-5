@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid using Flex</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: black;
+    }
+    .grup-pertama {
+      background-color: #FFDD55;
+    }
+    .grup-kedua {
+      background-color: red;
+    }
+    .grup-ketiga {
+      background-color: #00383D;
+    }
+    .container {
+      display: flex;
+      height: 100%;
+      min-height: 200px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="container grup-pertama">Pertama</div>
+  <div class="container grup-kedua">
+    <div></div>
+    <div></div>
+  </div>
+  <div class="container grup-ketiga">Ketiga</div>
+</body>
+</html>
