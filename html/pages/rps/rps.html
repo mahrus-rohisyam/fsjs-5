@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock and Paper</title>
+</head>
+<body>
+    <div id="app">
+        <div class="summary">
+            <h1 class="title">Rock and Paper mini games</h1>
+            <h2 id="game"></h2>
+            <h2 id="result"></h2>
+        </div>
+        <div class="game">
+            <div class="option" onclick="pickOption('🖐️')">🖐️</div>
+            <div class="option" onclick="pickOption('✊')">✊</div>
+            <div class="option" onclick="pickOption('🖐️')">🖐️</div>
+        </div>
+    </div>
+
+    <script>
+        class Start{
+            constructor(){
+                this.playerName = "you"
+                this.botName = "Salt Bot"
+                this.payerOption;
+                this.botOption;
+                this.winner = ""
+            }
+
+            set setBotOption (option) {
+                this.botOption = option
+            }
+
+            get getBotOption () {
+                return this.botOption
+            }
+
+            set setPlayerOption (option){
+                this.playerOption = option
+            }
+
+            get getPlayerOption (){
+                return this.playerOption
+            }
+
+            botAI (){
+                const option = ['✊', '✌️', '🖐️']
+                const pickOption = option[Math.floor(Math.random() * option.length)]
+                return pickOption
+            }
+
+            champion(){
+                if (this.botOption == '✊' && this.playerOption == '🖐️'){
+                    return this.winner = this.playerName
+                } else if (this.botOption == '✊' && this.playerOption == '✌️') {
+                    return this.winner = this.botName
+                } else if (this.botOption == '🖐️' && this.playerOption == '✌️') {
+                    return this.winner = this.playerName
+                } else if (this.botOption == '🖐️' && this.playerOption == '✊') {
+                    return this.winner = this.botName
+                } else if (this.botOption == '✌️' && this.playerOption == '✊') {
+                    return this.winner = this.playerName
+                } else if (this.botOption == '✌️' && this.playerOption == '🖐️') {
+                    return this.winner = this.botName
+                } else {
+                    return this.winner = 'Draw !'
+                }
+            }
+        }
+
+        function pickOption(params){    
+            const start = new Start()
+            const game = document.getElementById('game')
+            const result = document.getElementById('result')
+
+            start.setPlayerOption = params;
+            start.setBotOption = start.botAI()
+
+            game.textContent = `Player : ${start.playerOption} vs Salt Bot : ${start.botOption}`
+            result.textContent = `The champion is ${start.champion()}`
+        }
+    </script>
+</body>
+</html>
