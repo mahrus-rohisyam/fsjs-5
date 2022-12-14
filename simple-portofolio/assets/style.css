@@ -2,11 +2,11 @@
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 html {
   scroll-behavior: smooth;
-  transition: all 0.3s;
+  transition: all 0.75s;
 }
 body {
   overflow-x: hidden;
-  font-size: 18px;
+  font-size: 24px;
 }
 .screen-reader-text {
   border: 0;
@@ -30,7 +30,7 @@ h2 {
   background-color: #1e1e1e;
   display: flex;
   justify-content: space-between;
-  padding: 10px 10px;
+  padding: 10px 30px;
   align-items: center;
   position: sticky;
   top: 0;
@@ -99,6 +99,53 @@ h2 {
   justify-content: center;
 }
 
+#mobile-menu {
+  height: 30px;
+  width: 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#mobile-menu span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: red;
+  transition: all 0.75s;
+}
+
+#mobile-menu span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+#mobile-menu span:nth-child(4) {
+  transform-origin: 0 0;
+}
+
+#mobile-menu input:checked ~ span:nth-child(2){
+  transform: rotate(45deg) translate(5px, -1px);
+}
+
+#mobile-menu input:checked ~ span:nth-child(3){
+  display: none;
+}
+
+#mobile-menu input:checked ~ span:nth-child(4){
+  transform: rotate(-45deg) translate(4px, 1px);
+}
+
+#mobile-menu > input {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 99;
+}
+
 .container {
   min-height: 100vh;
   display: flex;
@@ -122,4 +169,17 @@ h2 {
 .animasi-timbul:hover {
   transition: 1s ease-in-out;
   transform: scale(120%);
+}
+
+@media screen and (max-width: 768px) {
+  /* header > nav, header > button {
+    display: none;
+  }
+
+  #mobile-menu {
+    display: flex;
+  } */
+  body {
+    font-size: 18px;
+  }
 }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <style>
+      #main-content {
+        padding: 10px 20px;
+        gap: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      @media screen and (max-width: 768px) {
+        #main-content {
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+      }
+
+      #main-content > div {
+        width: 100%;
+      }
+
+      #main-content > form {
+        width: 100%;
+      }
+    </style>
+    <title>Contact - Your Name</title>
+  </head>
+  <body>
+    <!-- <header id="navigation">
+      <figure>
+        <a href="/">
+          <img
+            id="logo"
+            src="../assets/media/russ-logo.svg"
+            alt="russ-logo"
+            srcset="../assets/media/russ-logo.svg"
+            width="50px"
+          />
+          <h1 class="screen-reader-text">Your Site</h1>
+        </a>
+      </figure>
+      <nav>
+        <ul>
+          <li class="underline-animation">
+            <a href="/page/contact.html">Contact</a>
+          </li>
+          <li class="underline-animation">
+            <a href="/page/gallery.html">Gallery</a>
+          </li>
+          <li class="underline-animation">
+            <a href="/page/blog.html">Blog</a>
+          </li>
+        </ul>
+      </nav>
+      <button onclick="window.open('mailto:mahrusaim@gmail.com')">
+        Let's Talk
+      </button>
+    </header> -->
+
+    <main id="main-content" class="container">
+      <div>
+        <h2>Contact Me!</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. At,
+          doloribus. Commodi dolor dolorum eius facere eum veritatis laborum
+          sequi et expedita optio distinctio non ducimus voluptates voluptatem
+          voluptatum, fugit nesciunt.
+        </p>
+      </div>
+      <form id="contact">
+        <div class="form-group">
+          <label for="form-name">Your Name</label>
+          <input
+            placeholder="Enter Your Name"
+            type="text"
+            name="form-name"
+            id="form-name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="form-mail">Your Mail</label>
+          <input
+            placeholder="Enter your mail"
+            type="email"
+            name="form-mail"
+            id="form-mail"
+          />
+        </div>
+        <div class="form-group">
+          <label for="form-message">Message</label>
+          <textarea
+            placeholder="Enter Your Message"
+            name="form-message"
+            id="form-message"
+            cols="30"
+            rows="5"
+          ></textarea>
+        </div>
+        <button id="submit-form" type="submit">Send Message</button>
+        <div id="result">Result goes by here</div>
+      </form>
+    </main>
+    <footer id="footer">
+      <p id="credit">&copy; 2020 <a href="/">Your Site</a></p>
+    </footer>
+    <script defer src="/assets/jquery.js"></script>
+    <script defer src="/assets/main.js"></script>
+  </body>
+</html>
