@@ -1,4 +1,4 @@
-import Hewan from "./class"
+import Hewan from "./Inheritance"
 
 
 const newAnimal: Hewan = new Hewan("Harimau", 3, 2, true, 'Di Air', false);
