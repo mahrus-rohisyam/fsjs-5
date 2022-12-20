@@ -1,29 +1,37 @@
 import React, { useState } from "react";
-// name: string, key: number, value: string || number || object || boolean
+import './List.css'
 
 type ListKey = {
-  name: string;
   key: number;
+  title: string;
 };
 
 type Props = {
-  name: string;
-  key: number;
+  propsList: ListKey[];
+  setPropList?: () =>
+    | React.Dispatch<React.SetStateAction<ListKey[]>>
+    | undefined
+    | null;
 };
 
-const List: React.FC<Props> = ({ name, key }) => {
+const List: React.FC<Props> = ({ propsList, setPropList }) => {
   const [list, setlist] = useState<ListKey[]>([]);
+  
 
   return (
     <ul>
-      {/* {list.map((v: ListKey, i) => {
-        return (
-          <li key={i}>
-            {v.name} {v.key}
-          </li>
-        );
-      })} */}
-      {name} {key}
+      <li>
+        {propsList.map((v: ListKey, i) => {
+          console.log(v.title);
+          return (
+            <li key={i}>
+              <p>
+                {v.title} {v.key}
+              </p>
+            </li>
+          );
+        })}
+      </li>
     </ul>
   );
 };

@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { SyntheticEvent } from 'react';
 
-function Contact() {
+type Props = {
+
+}
+
+const Contact = () => {
+  const onSubmitForm = (e: SyntheticEvent) => {
+    e.preventDefault();
+    alert("Submitted!")
+    
+  }
+
   return (
-    <div>Contact</div>
+    <>
+      <h2>Contact Form</h2>
+      <form onSubmit={(e) => {onSubmitForm(e)}}>
+        <input type="submit" value="asdasd" />
+      </form>
+    </>
   )
 }
 
