@@ -1,46 +1,55 @@
 import React, { SyntheticEvent, useState } from "react";
-import Blank from "../templates/blank";
 import BlankTemplate from "../templates/blank";
 import Image from "../atoms/Image";
 
 // type Props = {};
 
-const Playground = () => {
-  const [count, setCount] = useState<number>(0);
+type Form = {
+  data: {
+    name: string;
+    address: string;
+  },
+  count: number;
+}
 
-  const addNumber = (e: SyntheticEvent): void => {
-    e.preventDefault();
+const Playground: React.FC = () => {
+  const [count, setCount] = useState<number>(0);  
+  const [state, setState] = useState<{data: object, count: number}>({data: {}, count: 0})
+
+  const increment = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();    
     setCount((prevCount) => prevCount + 1);
-    // setCount(count + 1);
   };
 
-  const substractNumber = (e: SyntheticEvent): void => {
+  const decrement = (e: SyntheticEvent): void => {
     e.preventDefault();
     if (count !== 0) {
       setCount((prevCount) => prevCount - 1);
-      // setCount(count - 1);
     }
   };
 
+  const changeForm = (e: SyntheticEvent) => {
+    e.preventDefault();
+    setState({
+      data: {
+        name: "Mahrus",
+        address: "Bekasi"
+      },
+      count: 10
+    })
+  }
+
   return (
-    <BlankTemplate>
-      <button
-        onClick={(e) => {
-          addNumber(e);
-        }}
-      >
-        +
-      </button>
-      <span>{count}</span>
-      <button
-        onClick={(e) => {
-          substractNumber(e);
-        }}
-      >
-        -
-      </button>
-      <p>Dibawah ini image</p>
-      <Image src="https://cdn.pixabay.com/photo/2022/11/05/20/18/zebra-7572734_960_720.jpg" />
+    <BlankTemplate title="Mahrus Sayid">
+      <button onClick={(e) => { increment(e) }} >+</button>
+      <span>{count == 0 ? "Isinya kosong" : count}</span>
+      {/* <span>{count != 0 && count}</span> */}
+      <button onClick={(e) => { decrement(e) }}>-</button>
+      <br />
+      <p>{JSON.stringify(state)}</p>
+      <button onClick={(e) => { changeForm(e) }}>CHANGE FORM</button>
+      {/* <p>Dibawah ini image</p> */}
+      {/* <Image src="https://cdn.pixabay.com/photo/2022/11/05/20/18/zebra-7572734_960_720.jpg" /> */}
     </BlankTemplate>
   );
 };

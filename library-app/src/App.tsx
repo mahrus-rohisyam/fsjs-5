@@ -6,13 +6,16 @@ import Book from "./components/pages/Book";
 import "./App.css"
 import Playground from "./components/pages/Playground";
 import Contact from "./components/pages/Contact";
+import Fetch from "./components/pages/Fetch";
 
 function App() {
   return (
     <Routes>
       {/* Root */}
       <Route path="/" element={<Home />} />
-      <Route path="/fetch" element={<Home />} />
+      <Route path="/fetch" element={<Fetch />}>
+        <Route path=":id" />
+      </Route>
       <Route path="/contact" element={<Contact />} />
       <Route path="/playground" element={<Playground />} />
 
